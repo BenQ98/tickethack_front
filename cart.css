@@ -29,12 +29,11 @@
   text-decoration: none;
 }
 
-/* ✅ Liens Cart / Bookings */
 .nav a {
-  font-size: 14px;
-  margin-left: 25px;
+  color: #111;
+  margin-left: 20px;
   text-decoration: none;
-  color: #000;
+  font-size: 14px;
 }
 
 .nav a:hover {

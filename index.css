@@ -31,8 +31,8 @@ body {
   color: #2ecc71; /* vert Tickethack */
 }
 .nav a {
-  color: #111;       /* texte foncé comme la maquette */
-  margin-left: 24px;
+  color: #111;
+  margin-left: 20px;
   text-decoration: none;
   font-size: 14px;
 }
