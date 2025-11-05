@@ -1,6 +1,6 @@
 console.log("script.js loaded");
 
-const URL = "http://localhost:3000";
+const URL = "https://tickethack-back-chi.vercel.app";
 
 document.querySelector('#search').addEventListener('click', function () {
   const departure = document.querySelector('#departure').value;
