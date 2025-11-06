@@ -4,9 +4,9 @@ const URL = "https://tickethack-back-chi.vercel.app";
 // https://tickethack-front.vercel.app/
 
 // 🔎 Recherche des trajets
-document.querySelector('#search').addEventListener('click', function () {
-  const departure = document.querySelector('#departure').value;
-  const arrival = document.querySelector('#arrival').value;
+document.querySelector("#search").addEventListener("click", function () {
+  const departure = document.querySelector("#departure").value;
+  const arrival = document.querySelector("#arrival").value;
   const date = document.querySelector('input[type="date"]').value;
 
   if (!departure || !arrival || !date) {
@@ -15,31 +15,31 @@ document.querySelector('#search').addEventListener('click', function () {
   }
 
   fetch(`${URL}/trips?departure=${departure}&arrival=${arrival}&date=${date}`)
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       if (data.result) {
         displayTrips(data.trips);
       } else {
         displayNoTrips();
       }
     })
-    .catch(err => console.error(err));
+    .catch((err) => console.error(err));
 });
 
 // ✅ Affichage des trajets + bouton Book actif
 function displayTrips(trips) {
-  const infoBox = document.querySelector('.info-box');
-  infoBox.innerHTML = '';
+  const infoBox = document.querySelector(".info-box");
+  infoBox.innerHTML = "";
 
-  trips.forEach(trip => {
+  trips.forEach((trip) => {
     const dateTime = new Date(trip.date);
     const time = dateTime.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
+      hour: "2-digit",
+      minute: "2-digit",
     });
 
-    const item = document.createElement('div');
-    item.classList.add('trip-card');
+    const item = document.createElement("div");
+    item.classList.add("trip-card");
 
     item.innerHTML = `
       <span class="trip-route">${trip.departure} > ${trip.arrival}</span>
@@ -49,7 +49,7 @@ function displayTrips(trips) {
     `;
 
     // ✅ Quand on clique sur Book → on récupère le voyage
-    item.querySelector('.trip-book').addEventListener('click', () => {
+    item.querySelector(".trip-book").addEventListener("click", () => {
       console.log("🎯 Voyage sélectionné :", trip);
       addToCart(trip); // ✅ Optionnel (stockage panier)
       window.location.href = "cart.html";
@@ -69,6 +69,6 @@ function addToCart(trip) {
 
 // ✅ Si aucun trajet trouvé
 function displayNoTrips() {
-  const infoBox = document.querySelector('.info-box');
+  const infoBox = document.querySelector(".info-box");
   infoBox.innerHTML = `<p>No trip found 😕</p>`;
 }
