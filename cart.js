@@ -60,23 +60,26 @@ function renderCart() {
       renderCart();
     });
   });
-
-  // ✅ Gestion du clic sur le bouton Purchase
-  const purchaseBtn = document.querySelector(".purchase-btn");
-  if (purchaseBtn) {
-    purchaseBtn.addEventListener("click", function () {
-      if (cart.length === 0) return;
-
-      const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-      bookings.push(...cart);
-
-      localStorage.setItem("bookings", JSON.stringify(bookings));
-      localStorage.removeItem("cart");
-
-      window.location.href = "bookings.html";
-    });
-  }
 }
+
+// ✅ Gestion du clic sur Purchase
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("purchase-btn")) {
+    if (cart.length === 0) return;
+
+    // On ajoute les trajets dans "bookings"
+    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    cart.forEach(trip => bookings.push(trip));
+
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+
+    // On vide le panier
+    localStorage.removeItem("cart");
+
+    // Redirection vers bookings.html
+    window.location.href = "bookings.html";
+  }
+});
 
 // On lance l'affichage au chargement
 renderCart();
