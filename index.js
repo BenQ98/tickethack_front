@@ -1,6 +1,7 @@
 console.log("script.js loaded");
 
 const URL = "https://tickethack-back-chi.vercel.app";
+// https://tickethack-front.vercel.app/
 
 // 🔎 Recherche des trajets
 document.querySelector('#search').addEventListener('click', function () {
