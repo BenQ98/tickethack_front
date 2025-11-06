@@ -40,103 +40,60 @@
   text-decoration: underline;
 }
 
-/* ✅ Pour la page d'accueil */
-.hero {
-  text-align: center;
-  margin-top: 120px; /* Pour laisser la place au header fixe */
-}
-
-.hero h1 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #1d3557;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 16px;
-  color: #555;
-}
-
-/* ✅ Bloc central accueil : les deux cartes */
-.cards-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 15px;
-  width: 350px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Formulaire Search */
-.search-box input,
-.search-box button {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.search-box button {
-  background-color: #2ecc71;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.search-box button:hover {
-  background-color: #27ae60;
-}
-
-/* ✅ Carte de droite avec train */
-.info-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.info-box img {
-  width: 80px;
-  margin-bottom: 20px;
-}
-
-/* ✅ PAGE CART (fond gris + bloc centré) */
-.cart-page {
-  background-color: #f2f5f5;
-}
-
 .cart-container {
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 120px;
 }
 
 .cart-box {
   background: white;
-  padding: 40px 60px;
-  border-radius: 12px;
-  text-align: center;
   width: 700px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.cart-empty-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 8px;
+/* Ligne d’un ticket */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
 }
 
-.cart-empty-subtitle {
-  font-size: 14px;
-  color: #666;
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-delete-btn {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* ✅ Zone total + bouton à droite */
+.cart-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+  font-weight: bold;
+}
+
+.purchase-btn {
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.purchase-btn:hover {
+  background-color: #27ae60;
 }
