@@ -1,0 +1,189 @@
+/* Reset + base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Header transparent */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  /* ← blanc */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  /* léger relief */
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2ecc71;
+  /* vert Tickethack */
+}
+
+.nav a {
+  color: #111;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Décaler le contenu sous le header fixe */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  /* espace sous le header blanc */
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Cards Wrapper */
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Card Components */
+.card {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search-box input,
+.search-box button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Search button */
+.search-box button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background-color: #27ae60;
+}
+
+/* Info card right */
+.info-box {
+  background: #ffffff;
+  padding: 20px;
+  padding-top: 30px;
+  width: 380px;
+  height: 380px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+
+.train-icon {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* La carte de droite */
+.info-box {
+  background: #ffffff;
+  padding: 20px;
+  width: 380px;
+  height: 380px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+}
+
+/* Chaque ligne de trajet */
+.trip-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+/* Dernier élément sans bord */
+.trip-card:last-child {
+  border-bottom: none;
+}
+
+/* Texte 'Paris > Lyon' */
+.trip-route {
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+/* Heure */
+.trip-time {
+  width: 70px;
+  text-align: center;
+  color: #555;
+}
+
+/* Prix */
+.trip-price {
+  width: 60px;
+  font-weight: bold;
+  text-align: right;
+  color: #333;
+}
+
+/* Bouton Book */
+.trip-book {
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.trip-book:hover {
+  background-color: #27ae60;
+}

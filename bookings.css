@@ -1,0 +1,160 @@
+/* RESET DE BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f2f5f5;
+  color: #333;
+}
+
+/* HEADER GLOBAL (identique à index et cart) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2ecc71;
+  cursor: pointer;
+}
+
+.nav a {
+  color: #111;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* CONTENU CENTRÉ */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+  /* Pour ne pas passer sous le header */
+}
+
+/* CONTAINER DES BOOKINGS */
+.bookings-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #111;
+  /* bien visible */
+  margin-bottom: 25px;
+  /* ajoute de l'espace sous le titre */
+  display: block;
+}
+
+.bookings-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 50px 60px;
+  width: 70%;
+  max-width: 700px;
+}
+
+#clear-bookings-btn {
+  margin-top: 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#clear-bookings-btn:hover {
+  background-color: #c0392b;
+}
+
+#clear-departed-btn {
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#clear-departed-btn:hover {
+  background-color: #d35400;
+}
+
+/* CHAQUE BOOKING */
+.booking-item {
+  display: grid;
+  grid-template-columns: 1fr 120px 120px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.booking-item:last-child {
+  border-bottom: 10px;
+}
+
+/* TEXTE */
+.booking-route {
+  font-weight: 600;
+  color: #333;
+}
+
+.booking-item.departed {
+  opacity: 0.45;
+  color: #888;
+}
+
+
+.booking-time,
+.booking-duration {
+  text-align: right;
+  color: #555;
+}
+
+/* SI VIDE */
+.empty-box {
+  background: white;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  /* Alignement comme les autres pages */
+  width: 70%;
+  max-width: 700px;
+}
+
+.main-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.sub-text {
+  font-size: 14px;
+  color: #666;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickethack - Bookings</title>
+    <link rel="stylesheet" href="bookings.css" />
+  </head>
+  <body>
+    <!-- Header comme sur index -->
+    <header class="header">
+      <div class="logo" onclick="location.href='index.html'">Tickethack</div>
+      <nav class="nav">
+        <a href="cart.html">Cart</a>
+        <a href="bookings.html">Bookings</a>
+      </nav>
+    </header>
+
+    <!-- Contenu -->
+    <main class="content">
+      <div class="empty-box">
+        <h2 class="bookings-title">Your bookings</h2>
+        <p class="main-text">No bookings yet.</p>
+        <p class="sub-text">Why not plan a trip?</p>
+        <button id="clear-bookings-btn" style="display:none;">Clear bookings</button>
+      </div>
+    </main>
+    <script src="bookings.js"></script>
+  </body>
+</html>
