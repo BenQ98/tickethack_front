@@ -25,7 +25,7 @@ bookings.forEach((trip) => {
   const countdown = formatCountdown(date);
   const isDeparted = countdown === "Departed";
 
-  // ✅ Ajout de la classe departed si le voyage est passé
+  // Ajout de la classe departed si le voyage est passé
   emptyBox.innerHTML += `
     <div class="booking-item ${isDeparted ? "departed" : ""}">
       <span class="booking-route">${trip.departure} > ${trip.arrival}</span>
@@ -35,7 +35,7 @@ bookings.forEach((trip) => {
   `;
 });
 
-  // ✅ On ajoute le bouton après le contenu (donc jamais effacé)
+  // On ajoute le bouton après le contenu (donc jamais effacé)
   const clearBtn = document.createElement("button");
   clearBtn.id = "clear-bookings-btn";
   clearBtn.textContent = "Clear bookings";
@@ -59,7 +59,7 @@ function formatCountdown(tripDate) {
   return `${hours}h ${minutes}m`;
 }
 
-// === Ajout du bouton "Clear departed trips" ===
+// Ajout du bouton "Clear departed trips"
 const now = new Date();
 const hasDepartedTrips = bookings.some(trip => new Date(trip.date) < now);
 

@@ -3,7 +3,7 @@ console.log("script.js loaded");
 const URL = "https://tickethack-back-chi.vercel.app";
 // https://tickethack-front.vercel.app/
 
-// 🔎 Recherche des trajets
+// Recherche des trajets avec => depart => arrivé + date (obligatoire)
 document.querySelector("#search").addEventListener("click", function () {
   const departure = document.querySelector("#departure").value;
   const arrival = document.querySelector("#arrival").value;
@@ -26,7 +26,7 @@ document.querySelector("#search").addEventListener("click", function () {
     .catch((err) => console.error(err));
 });
 
-// ✅ Affichage des trajets + bouton Book actif
+// Affichage des trajets
 function displayTrips(trips) {
   const infoBox = document.querySelector(".info-box");
   infoBox.innerHTML = "";
@@ -48,10 +48,10 @@ function displayTrips(trips) {
       <button class="trip-book">Book</button>
     `;
 
-    // ✅ Quand on clique sur Book → on récupère le voyage
+    // recuperation du voyage => click bt book
     item.querySelector(".trip-book").addEventListener("click", () => {
       console.log("🎯 Voyage sélectionné :", trip);
-      addToCart(trip); // ✅ Optionnel (stockage panier)
+      addToCart(trip); // appel de la fonction pour ajouter au panier
       window.location.href = "cart.html";
     });
 
@@ -59,7 +59,7 @@ function displayTrips(trips) {
   });
 }
 
-// ✅ Fonction d'ajout au panier (localStorage)
+// Fonction d'ajout au panier -> Local
 function addToCart(trip) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push(trip);
@@ -67,7 +67,7 @@ function addToCart(trip) {
   console.log("🛒 Ajouté au panier :", trip);
 }
 
-// ✅ Si aucun trajet trouvé
+// Si aucun trajet trouvé
 function displayNoTrips() {
   const infoBox = document.querySelector(".info-box");
   infoBox.innerHTML = `<p>No trip found 😕</p>`;
